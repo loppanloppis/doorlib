@@ -96,8 +96,10 @@
 #define	DOOR_SS(x) (x)?(x):"(null)"
 
 
-int		ttyfd;              /* Filedescriptor for raw mode  */
-struct termios	tbufs, tbufsavs;    /* Structure for raw mode	    */
+extern int ttyfd;			/* Filedescriptor for raw mode  */		    
+extern struct termios tbufs, tbufsavs;  /* Structure for raw mode     */
+
+
 
 
 typedef struct	_keytab {	    /* Configuration table	    */
@@ -162,7 +164,9 @@ typedef struct	_doorsys {	    /* 52 lines door.sys file	    */
     int		posted;		    /* Messages posted		    */
 } doorsys_t;
 
-doorsys_t	doorsys;	    /* Loaded door.sys data	    */
+extern doorsys_t doorsys;
+
+/*doorsys_t	doorsys;*/	    /* Loaded door.sys data	    */
 
 
 unsigned char	door_getch(void);
