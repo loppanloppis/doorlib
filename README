@@ -1,3 +1,5 @@
+** Updated 2025-07-14 to work with modern compilers **
+
 ** Archived and read-only on 14-Apr-2025 **
 
 This is doorlib, a library to easy write native Unix bbs doors. This library

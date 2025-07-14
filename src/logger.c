@@ -49,11 +49,11 @@ char *date(void)
 {
     struct tm   ptm;
     time_t      now;
-    static char buf[21];
+    static char buf[32];
 
     now = time(NULL);
     ptm = *localtime(&now);
-    snprintf(buf, 21, "%02d-%s-%04d %02d:%02d:%02d", ptm.tm_mday, _mon[ptm.tm_mon], ptm.tm_year+1900,
+    snprintf(buf, 32, "%02d-%s-%04d %02d:%02d:%02d", ptm.tm_mday, _mon[ptm.tm_mon], ptm.tm_year+1900,
 		ptm.tm_hour, ptm.tm_min, ptm.tm_sec);
     return(buf);
 }
