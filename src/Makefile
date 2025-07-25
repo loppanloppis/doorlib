@@ -14,7 +14,7 @@ TARGET		= libdoor.a libdoor.la
 #############################################################################################################
 
 .c.o:
-		libtool --mode=compile ${CC} ${CFLAGS} -c $<
+		libtool --tag=CC --mode=compile ${CC} ${CFLAGS} -g -c $<
 
 all:		${TARGET}
 
@@ -26,11 +26,11 @@ libdoor.a:	${OBJS}
 		ranlib libdoor.a
 
 libdoor.la:	${OBJS}
-		libtool --mode=link ${CC} -g -O -o libdoor.la ${LOBJS} -release "${VERSION}" -rpath ${DESTDIR}${LIBDIR}
+		libtool -v --tag=CC --mode=link ${CC} -g -O -o libdoor.la ${LOBJS} -release "${VERSION}" -rpath ${DESTDIR}${LIBDIR}
 
 install:	all
 		mkdir -p ${DESTDIR}${LIBDIR}
-		libtool cp libdoor.la ${DESTDIR}${LIBDIR}/libdoor.la
+		libtool --mode install cp libdoor.la ${DESTDIR}${LIBDIR}/libdoor.la
 		mkdir -p ${DESTDIR}${INCDIR}
 		cp ${HDRS} ${DESTDIR}${INCDIR}
 

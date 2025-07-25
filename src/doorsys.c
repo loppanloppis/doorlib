@@ -32,6 +32,12 @@
 #include "door.h"
 
 
+doorsys_t doorsys; /* Global variable now declared only once */
+
+int ttyfd = 0;
+struct termios tbufs, tbufsavs;
+doorsys_t doorsys;
+
 extern int	time2go;
 extern int	termmode;
 
